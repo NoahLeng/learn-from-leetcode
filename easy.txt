@@ -1,0 +1,11 @@
+1.布尔变量很好用。可以使用（x>0）-(x<0)判断数字的符号，返回0或者1。
+可以通过int和str的变换操作，实现数字反转等，int(str(x)[::-1])
+
+2.当存在需要遍历列表两次以获取某些符合条件的索引时，可考虑使用bufferdict减少复杂度，提升效率：
+寻找列表中两个数字使得两者之和等于target，返回两者索引的元组。
+buff_dict = {}
+for i, num in enumerate(nums)：
+	if num in buff_dict:
+		return [buff_dict[num], i]
+	else:
+		buff_dict[target - num] = i
